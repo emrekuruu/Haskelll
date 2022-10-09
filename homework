@@ -1,0 +1,18 @@
+
+
+
+
+countD :: Eq a => [a]->Int
+countD [] = 0
+countD (x:xs) = 1+length(cntD(map (isEqual x) xs))
+
+
+isEqual :: Eq a => a->a->Bool
+isEqual x y | x == y  = True
+            | otherwise = False
+
+
+cntD :: [Bool]->[Bool]
+cntD [] = []
+cntD (x:xs) | x == False = x:cntD xs
+            | otherwise = cntD xs
