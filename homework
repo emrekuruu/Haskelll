@@ -2,17 +2,16 @@ HOMEWORK QUESTİON 10
 
 
 
-countD :: Eq a => [a]->Int
-countD [] = 0
-countD (x:xs) = 1+length(cntD(map (isEqual x) xs))
+countD :: Eq a => [a]->[a]
+countD [] = []
+countD (x:xs) = x:countD(filter (isNotEqual x) xs)
 
 
-isEqual :: Eq a => a->a->Bool
-isEqual x y | x == y  = True
-            | otherwise = False
+isNotEqual :: Eq a => a->a->Bool
+isNotEqual x y | x == y  = False
+               | otherwise = True
 
 
-cntD :: [Bool]->[Bool]
-cntD [] = []
-cntD (x:xs) | x == False = x:cntD xs
-            | otherwise = cntD xs
+
+
+ON THE COMMEND İ USE *Main> length(countD "aabbcc") --> 3 
